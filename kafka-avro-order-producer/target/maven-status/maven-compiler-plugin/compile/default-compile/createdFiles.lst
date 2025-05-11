@@ -1,6 +1,6 @@
-com\retail\producer\service\OrderProducer.class
-com\retail\avro\RetailTransaction.class
-com\retail\producer\config\KafkaProducerConfig.class
-com\retail\avro\RetailTransaction$Builder.class
-com\retail\producer\KafkaProducerApplication.class
-com\retail\avro\RetailTransaction$1.class
+com/retail/avro/RetailTransaction$Builder.class
+com/retail/producer/config/KafkaProducerConfig.class
+com/retail/producer/KafkaProducerApplication.class
+com/retail/producer/service/OrderProducer.class
+com/retail/avro/RetailTransaction$1.class
+com/retail/avro/RetailTransaction.class
