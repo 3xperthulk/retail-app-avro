@@ -1,0 +1,4 @@
+/Users/xperthulk/Kafka-Streaming-Class/retail-app-avro/kafka-avro-order-producer-v2/src/main/java/com/retail/avro/RetailTransaction.java
+/Users/xperthulk/Kafka-Streaming-Class/retail-app-avro/kafka-avro-order-producer-v2/src/main/java/com/retail/producer/KafkaProducerApplication.java
+/Users/xperthulk/Kafka-Streaming-Class/retail-app-avro/kafka-avro-order-producer-v2/src/main/java/com/retail/producer/config/KafkaProducerConfig.java
+/Users/xperthulk/Kafka-Streaming-Class/retail-app-avro/kafka-avro-order-producer-v2/src/main/java/com/retail/producer/service/OrderProducer.java

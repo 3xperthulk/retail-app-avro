@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 5179371325531312388L;
+  private static final long serialVersionUID = -148470317369942853L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RetailTransaction\",\"namespace\":\"com.retail.avro\",\"fields\":[{\"name\":\"transactionId\",\"type\":\"string\"},{\"name\":\"customerId\",\"type\":\"string\"},{\"name\":\"itemId\",\"type\":\"string\"},{\"name\":\"itemName\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"int\"},{\"name\":\"price\",\"type\":\"double\"},{\"name\":\"timestamp\",\"type\":\"long\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RetailTransaction\",\"namespace\":\"com.retail.avro\",\"fields\":[{\"name\":\"transactionId\",\"type\":\"string\"},{\"name\":\"customerId\",\"type\":\"string\"},{\"name\":\"itemId\",\"type\":\"string\"},{\"name\":\"itemName\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"int\"},{\"name\":\"price\",\"type\":\"double\"},{\"name\":\"timestamp\",\"type\":\"long\"},{\"name\":\"paymentMethod\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -80,6 +80,7 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
   private int quantity;
   private double price;
   private long timestamp;
+  private java.lang.CharSequence paymentMethod;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -97,8 +98,9 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
    * @param quantity The new value for quantity
    * @param price The new value for price
    * @param timestamp The new value for timestamp
+   * @param paymentMethod The new value for paymentMethod
    */
-  public RetailTransaction(java.lang.CharSequence transactionId, java.lang.CharSequence customerId, java.lang.CharSequence itemId, java.lang.CharSequence itemName, java.lang.Integer quantity, java.lang.Double price, java.lang.Long timestamp) {
+  public RetailTransaction(java.lang.CharSequence transactionId, java.lang.CharSequence customerId, java.lang.CharSequence itemId, java.lang.CharSequence itemName, java.lang.Integer quantity, java.lang.Double price, java.lang.Long timestamp, java.lang.CharSequence paymentMethod) {
     this.transactionId = transactionId;
     this.customerId = customerId;
     this.itemId = itemId;
@@ -106,6 +108,7 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
     this.quantity = quantity;
     this.price = price;
     this.timestamp = timestamp;
+    this.paymentMethod = paymentMethod;
   }
 
   @Override
@@ -125,6 +128,7 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
     case 4: return quantity;
     case 5: return price;
     case 6: return timestamp;
+    case 7: return paymentMethod;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -141,6 +145,7 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
     case 4: quantity = (java.lang.Integer)value$; break;
     case 5: price = (java.lang.Double)value$; break;
     case 6: timestamp = (java.lang.Long)value$; break;
+    case 7: paymentMethod = (java.lang.CharSequence)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -265,6 +270,23 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
   }
 
   /**
+   * Gets the value of the 'paymentMethod' field.
+   * @return The value of the 'paymentMethod' field.
+   */
+  public java.lang.CharSequence getPaymentMethod() {
+    return paymentMethod;
+  }
+
+
+  /**
+   * Sets the value of the 'paymentMethod' field.
+   * @param value the value to set.
+   */
+  public void setPaymentMethod(java.lang.CharSequence value) {
+    this.paymentMethod = value;
+  }
+
+  /**
    * Creates a new RetailTransaction RecordBuilder.
    * @return A new RetailTransaction RecordBuilder
    */
@@ -312,6 +334,7 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
     private int quantity;
     private double price;
     private long timestamp;
+    private java.lang.CharSequence paymentMethod;
 
     /** Creates a new Builder */
     private Builder() {
@@ -352,6 +375,10 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
         this.timestamp = data().deepCopy(fields()[6].schema(), other.timestamp);
         fieldSetFlags()[6] = other.fieldSetFlags()[6];
       }
+      if (isValidValue(fields()[7], other.paymentMethod)) {
+        this.paymentMethod = data().deepCopy(fields()[7].schema(), other.paymentMethod);
+        fieldSetFlags()[7] = other.fieldSetFlags()[7];
+      }
     }
 
     /**
@@ -387,6 +414,10 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
       if (isValidValue(fields()[6], other.timestamp)) {
         this.timestamp = data().deepCopy(fields()[6].schema(), other.timestamp);
         fieldSetFlags()[6] = true;
+      }
+      if (isValidValue(fields()[7], other.paymentMethod)) {
+        this.paymentMethod = data().deepCopy(fields()[7].schema(), other.paymentMethod);
+        fieldSetFlags()[7] = true;
       }
     }
 
@@ -667,6 +698,46 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
       return this;
     }
 
+    /**
+      * Gets the value of the 'paymentMethod' field.
+      * @return The value.
+      */
+    public java.lang.CharSequence getPaymentMethod() {
+      return paymentMethod;
+    }
+
+
+    /**
+      * Sets the value of the 'paymentMethod' field.
+      * @param value The value of 'paymentMethod'.
+      * @return This builder.
+      */
+    public com.retail.avro.RetailTransaction.Builder setPaymentMethod(java.lang.CharSequence value) {
+      validate(fields()[7], value);
+      this.paymentMethod = value;
+      fieldSetFlags()[7] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'paymentMethod' field has been set.
+      * @return True if the 'paymentMethod' field has been set, false otherwise.
+      */
+    public boolean hasPaymentMethod() {
+      return fieldSetFlags()[7];
+    }
+
+
+    /**
+      * Clears the value of the 'paymentMethod' field.
+      * @return This builder.
+      */
+    public com.retail.avro.RetailTransaction.Builder clearPaymentMethod() {
+      paymentMethod = null;
+      fieldSetFlags()[7] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public RetailTransaction build() {
@@ -679,6 +750,7 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
         record.quantity = fieldSetFlags()[4] ? this.quantity : (java.lang.Integer) defaultValue(fields()[4]);
         record.price = fieldSetFlags()[5] ? this.price : (java.lang.Double) defaultValue(fields()[5]);
         record.timestamp = fieldSetFlags()[6] ? this.timestamp : (java.lang.Long) defaultValue(fields()[6]);
+        record.paymentMethod = fieldSetFlags()[7] ? this.paymentMethod : (java.lang.CharSequence) defaultValue(fields()[7]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -725,6 +797,14 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
 
     out.writeLong(this.timestamp);
 
+    if (this.paymentMethod == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.paymentMethod);
+    }
+
   }
 
   @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
@@ -746,8 +826,15 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
 
       this.timestamp = in.readLong();
 
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.paymentMethod = null;
+      } else {
+        this.paymentMethod = in.readString(this.paymentMethod instanceof Utf8 ? (Utf8)this.paymentMethod : null);
+      }
+
     } else {
-      for (int i = 0; i < 7; i++) {
+      for (int i = 0; i < 8; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.transactionId = in.readString(this.transactionId instanceof Utf8 ? (Utf8)this.transactionId : null);
@@ -775,6 +862,15 @@ public class RetailTransaction extends org.apache.avro.specific.SpecificRecordBa
 
         case 6:
           this.timestamp = in.readLong();
+          break;
+
+        case 7:
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.paymentMethod = null;
+          } else {
+            this.paymentMethod = in.readString(this.paymentMethod instanceof Utf8 ? (Utf8)this.paymentMethod : null);
+          }
           break;
 
         default:
