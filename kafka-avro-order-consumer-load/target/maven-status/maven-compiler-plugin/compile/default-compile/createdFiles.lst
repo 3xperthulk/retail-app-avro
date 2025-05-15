@@ -1,0 +1,6 @@
+com/retail/avro/RetailTransaction$Builder.class
+com/retail/consumer/config/KafkaConsumerConfig.class
+com/retail/consumer/service/OrderConsumer.class
+com/retail/consumer/KafkaOrderConsumerApplication.class
+com/retail/avro/RetailTransaction$1.class
+com/retail/avro/RetailTransaction.class
